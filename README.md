@@ -12,4 +12,4 @@ Open In Remix
 Compile
 Deploy
 Contract
-code
+
