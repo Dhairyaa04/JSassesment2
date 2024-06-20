@@ -21,12 +21,12 @@ An in-depth paragraph about your project and overview of use.
 * Contract
 ```cpp
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
+pragma solidity 0.8.25;
 
 /*
        REQUIREMENTS
     1. Your contract will have public variables that store the details about your coin (Token Name, Token Abbrv., Total Supply)
-    2. Your contract will have a mapping of addresses to accounts (address => uint)
+    2. Your contract will have a mapping of addresses to balances (address => uint)
     3. You will have a mint function that takes two parameters: an address and a value. 
        The function then increases the total supply by that number and increases the balance 
        of the “sender” address by that amount
@@ -40,33 +40,29 @@ pragma solidity 0.8.18;
 contract MyToken {
 
     // public variables here
-    string  public tokenName = "Mystic Coin";
-    string public tokenNot  = "MC";
-    uint256 public totalSupply = 0;
-
-
-
-
+    string public tokenname = "dhairyaa";
+    string public tokenabbrv = "sangwan";
+    uint public totalSupply= 0;
     // mapping variable here
-        mapping (address => uint256) public accounts;
-
+    mapping(address => uint) public balances;
     // mint function
-    function mintToken(address _address ,uint256 _value ) public {
-            totalSupply+=_value;
-            accounts[_address] += _value;
-            
+    function mint(address _address,uint _value) public{
+        totalSupply += _value;
+        balances[_address] += _value;
     }
     // burn function
-        function burnToken(address _address ,uint256 _value ) public  {
-            if(accounts[_address]>=_value){
-
-            totalSupply -=_value;
-            accounts[_address] -= _value;
-            }   
-            
+ function burn(address _address,uint _value) public{
+    if(balances[_address] >= _value){
+        totalSupply -= _value;
+        balances[_address] -= _value;
     }
-
 }
+}
+
+
+
+
+
 
 ```
 
@@ -81,10 +77,10 @@ command to run if program contains helper info
 
 Contributors names and contact info
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+ex.Dhairyaa 
+ex. 
 
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the [dhairyaa] License - see the LICENSE.md file for details
